@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <body>
+   
+
+    <div class="container">
+        <!-- Content here -->
+        <nav class="navbar navbar-expand-lg bg-success">
+            <div class="container-fluid ">
+              <a class="navbar-brand text-white" href="#"><b>TODays NEWS</b></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Users</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Post Category
+                    </a>
+                    <ul class="dropdown-menu text-white">
+                      <li><a class="dropdown-item" href="#">Technology</a></li>
+                      <li><a class="dropdown-item" href="#">Nature</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Marketing</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2 bg-transparent" type="search" placeholder="Search" aria-label="Search">
+                  <a  href="{% url 'logout_page' %}"><button class="btn border" type="submit">Search</button></a>
+                </form>
+
+              </div>
+             
+                <a class="mx-3" href="{% url 'logout_page' %}"><button class="btn border" type="submit">Logout</button></a>
+              
+            </div>
+          </nav>
+          <!-- Add post model form  -->
+
+
+
+
+  <!-- Add post model form  -->
+ <div class="row  my-4 justify-content-end">
+   <div class="col-2  "><a class="" href="{% url 'AddPost'%} "><button class="btn border bg-success">Add New Post</button> </a> </div>
+   <div class="col-10 "><h4 class="text-success"> <marquee>Unleash your potential with our inspiring stories and practical tips for personal growth and development.</marquee></h4></div>
+  </div>
+
+<!-- caroshel start -->
+<!-- <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+<!-- caroshel end  -->
+
+<!-- card strt  -->
+
+<div class="row">
+    {% for i in post %}
+    <div class="col-4 my-2 ">
+        <div class="card shadow-lg bg-body-tertiary" style="width: 18rem;" action="">
+    
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a3709d11-192a-42ea-9d3a-07b1e68a1b30/dduvoha-fa18c9e3-4901-468c-a500-62cdf8e5b606.jpg/v1/fill/w_1452,h_550,q_70,strp/mech_tech_bg_by_rinblueadmin_dduvoha-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTEzNyIsInBhdGgiOiJcL2ZcL2EzNzA5ZDExLTE5MmEtNDJlYS05ZDNhLTA3YjFlNjhhMWIzMFwvZGR1dm9oYS1mYTE4YzllMy00OTAxLTQ2OGMtYTUwMC02MmNkZjhlNWI2MDYuanBnIiwid2lkdGgiOiI8PTMwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.UqUNsVoGZ0IlrPWgCVowFxAUvookwtLvubOUabblLso" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title text-black" name="bloggtitle">{{i.bloggtitle}}</h5>
+            <p class="card-text" name="bloggContent">{{i.bloggContent|truncatechars:100}}</p>
+            <!-- Read more model start  -->
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+              Read More..
+            </button>
+
+             <!-- Read more model start  -->
+            </div>
+        </div>
+
+    </div>
+    
+  {% endfor %}
+</div>
+  
+<!-- card end  -->
+
+<!-- Blog model  -->
+
+<!-- blog model end  -->
+
+
+      
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  </body>
+</html>
